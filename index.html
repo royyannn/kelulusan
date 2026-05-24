@@ -47,17 +47,11 @@ body{
   gap:1.5rem;
 }
 .logo-slot{
-  width:56px;height:56px;border-radius:50%;
-  border:1.5px solid rgba(200,151,43,.5);
+  width:60px;height:60px;
   display:flex;align-items:center;justify-content:center;
-  background:rgba(200,151,43,.08);
-  font-size:1.5rem;
-  cursor:pointer;overflow:hidden;
-  transition:.2s;position:relative;
+  position:relative;flex-shrink:0;overflow:hidden;
 }
-.logo-slot:hover{border-color:var(--gold);background:rgba(200,151,43,.15)}
-.logo-slot img{width:100%;height:100%;object-fit:contain;display:none;border-radius:50%}
-.logo-slot input{display:none}
+.logo-slot img{width:100%;height:100%;object-fit:contain;}
 .topbar-center{text-align:center;flex:1}
 .topbar-title{
   font-family:'Merriweather',serif;
@@ -215,12 +209,6 @@ footer{
 .footer-text{font-size:.75rem;color:rgba(255,255,255,.2);line-height:1.8}
 .footer-text strong{color:rgba(200,151,43,.5)}
 
-/* ── LOGO UPLOAD HINT ── */
-.logo-hint-text{
-  font-size:9px;position:absolute;bottom:2px;left:0;right:0;
-  text-align:center;color:rgba(200,151,43,.6);pointer-events:none;
-}
-
 /* ── INFO ROW ── */
 .info-row{
   display:flex;gap:.6rem;margin-top:1rem;
@@ -247,23 +235,17 @@ footer{
 
 <!-- TOP BAR -->
 <div class="topbar">
-  <div class="logo-slot" title="Upload logo Kemendikbud" onclick="this.querySelector('input').click()">
-    <span id="icon1">🏛</span>
-    <img id="img1" alt="Kemendikbud">
-    <span class="logo-hint-text">Logo</span>
-    <input type="file" accept="image/*" onchange="setLogo(this,'img1','icon1')">
+    <div class="logo-slot" id="slot1">
+    <img alt="Kemendikbud" src="https://royyannn.github.io/kelulusan/logo-kemdikbud.png">
   </div>
 
   <div class="topbar-center">
-    <div class="topbar-title" id="namaSekolah">SMP [Nama Sekolah]</div>
+    <div class="topbar-title" id="namaSekolah">SMP Negeri 3 Cilimus</div>
     <div class="topbar-sub">Pengumuman Kelulusan · Tahun Pelajaran 2024/2025</div>
   </div>
 
-  <div class="logo-slot" title="Upload logo sekolah" onclick="this.querySelector('input').click()">
-    <span id="icon2">🏫</span>
-    <img id="img2" alt="Sekolah">
-    <span class="logo-hint-text">Logo</span>
-    <input type="file" accept="image/*" onchange="setLogo(this,'img2','icon2')">
+    <div class="logo-slot" id="slot2">
+    <img alt="Sekolah" src="https://royyannn.github.io/kelulusan/logo-sekolah.png">
   </div>
 </div>
 
@@ -330,6 +312,8 @@ function onInput(){
 
 function cekKelulusan(){
   const raw = document.getElementById('nisnInput').value.trim();
+  // Strip leading zeros to match Excel-stored numeric NISN
+  const key = raw.replace(/^0+/, '') || raw;
   const err = document.getElementById('errMsg');
   const box = document.getElementById('resultBox');
   const btn = document.getElementById('btnCek');
@@ -352,7 +336,7 @@ function cekKelulusan(){
     spinner.style.display='none';
     btnText.innerHTML='🔍 &nbsp;Cek Sekarang';
 
-    const nama = DATA[raw];
+    const nama = DATA[key] || DATA[raw];
     if(nama){
       box.className='result result-lulus';
       box.innerHTML=`
@@ -379,16 +363,8 @@ function cekKelulusan(){
   }, 900);
 }
 
-function setLogo(input, imgId, iconId){
-  const file = input.files[0]; if(!file) return;
-  const r = new FileReader();
-  r.onload = e => {
-    const img = document.getElementById(imgId);
-    img.src = e.target.result; img.style.display='block';
-    document.getElementById(iconId).style.display='none';
-  };
-  r.readAsDataURL(file);
-}
+
 </script>
 </body>
+</html>
 </html>
