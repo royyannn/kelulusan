@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pengumuman Kelulusan 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1F3A;
+  --navy2:#122444;
+  --navy3:#1A3258;
+  --blue:#1D5FA8;
+  --blue2:#2470C2;
+  --blue3:#3B82D4;
+  --gold:#C8972B;
+  --gold2:#E8B84B;
+  --white:#FFFFFF;
+  --gray:#94A3B8;
+  --gray2:#CBD5E1;
+  --green:#16A34A;
+  --green-bg:#DCFCE7;
+  --red:#DC2626;
+  --red-bg:#FEE2E2;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background:var(--navy);
+  color:var(--white);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* ── TOP BAR ── */
+.topbar{
+  width:100%;
+  background:var(--navy2);
+  border-bottom:3px solid var(--gold);
+  padding:.7rem 1.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:1.5rem;
+}
+.logo-slot{
+  width:56px;height:56px;border-radius:50%;
+  border:1.5px solid rgba(200,151,43,.5);
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(200,151,43,.08);
+  font-size:1.5rem;
+  cursor:pointer;overflow:hidden;
+  transition:.2s;position:relative;
+}
+.logo-slot:hover{border-color:var(--gold);background:rgba(200,151,43,.15)}
+.logo-slot img{width:100%;height:100%;object-fit:contain;display:none;border-radius:50%}
+.logo-slot input{display:none}
+.topbar-center{text-align:center;flex:1}
+.topbar-title{
+  font-family:'Merriweather',serif;
+  font-size:clamp(.8rem,2.5vw,1rem);
+  font-weight:700;color:var(--white);
+  line-height:1.3;
+}
+.topbar-sub{font-size:clamp(.65rem,1.8vw,.78rem);color:var(--gold2);letter-spacing:.06em;margin-top:2px}
+
+/* ── HERO ── */
+.hero{
+  width:100%;max-width:560px;
+  padding:3rem 1.5rem 2rem;
+  text-align:center;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(29,95,168,.25);border:1px solid rgba(61,130,212,.4);
+  border-radius:50px;padding:.4rem 1rem;margin-bottom:1.5rem;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue3);font-weight:600;
+}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--blue3);animation:blink 1.8s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{
+  font-family:'Merriweather',serif;
+  font-size:clamp(1.5rem,6vw,2.4rem);
+  font-weight:900;line-height:1.15;
+  color:var(--white);margin-bottom:.6rem;
+}
+.hero h1 span{color:var(--gold2)}
+.hero-desc{
+  font-size:clamp(.85rem,2.5vw,.95rem);
+  color:var(--gray);line-height:1.7;margin-bottom:2.5rem;
+}
+
+/* ── CARD ── */
+.card{
+  width:100%;max-width:420px;
+  background:var(--navy2);
+  border:1px solid rgba(29,95,168,.35);
+  border-radius:20px;
+  padding:2rem 1.75rem;
+  margin:0 auto;
+}
+.card-label{
+  font-size:12px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--gold2);margin-bottom:.6rem;
+  display:flex;align-items:center;gap:.5rem;
+}
+.card-label::before,
+.card-label::after{content:'';flex:1;height:1px;background:rgba(200,151,43,.2)}
+.card-label::before{margin-right:.5rem}
+.card-label::after{margin-left:.5rem}
+
+.input-wrap{position:relative;margin-bottom:1rem}
+.input-wrap input{
+  width:100%;
+  padding:.85rem 1rem .85rem 3rem;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:1.05rem;letter-spacing:.06em;
+  background:rgba(255,255,255,.05);
+  border:1.5px solid rgba(29,95,168,.4);
+  border-radius:12px;
+  color:var(--white);
+  outline:none;
+  transition:.2s;
+}
+.input-wrap input::placeholder{color:rgba(255,255,255,.25);letter-spacing:.04em}
+.input-wrap input:focus{border-color:var(--blue2);background:rgba(29,95,168,.15)}
+.input-icon{
+  position:absolute;left:.85rem;top:50%;transform:translateY(-50%);
+  font-size:1.1rem;pointer-events:none;
+}
+.btn-cek{
+  width:100%;
+  padding:.9rem;
+  background:linear-gradient(135deg,var(--blue) 0%,var(--blue2) 100%);
+  border:none;border-radius:12px;
+  color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:1rem;font-weight:700;letter-spacing:.06em;
+  cursor:pointer;transition:.2s;
+  display:flex;align-items:center;justify-content:center;gap:.5rem;
+  box-shadow:0 4px 20px rgba(29,95,168,.35);
+}
+.btn-cek:hover{background:linear-gradient(135deg,var(--blue2) 0%,var(--blue3) 100%);transform:translateY(-1px);box-shadow:0 6px 24px rgba(29,95,168,.5)}
+.btn-cek:active{transform:translateY(0)}
+.btn-cek.loading{pointer-events:none;opacity:.7}
+.spinner{
+  width:16px;height:16px;border:2px solid rgba(255,255,255,.3);
+  border-top-color:#fff;border-radius:50%;
+  animation:spin .7s linear infinite;display:none;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── RESULT ── */
+.result{
+  margin-top:1.25rem;
+  border-radius:16px;
+  overflow:hidden;
+  display:none;
+  animation:slideIn .35s ease;
+}
+@keyframes slideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+
+.result-lulus{
+  background:linear-gradient(135deg,rgba(22,163,74,.12) 0%,rgba(16,122,55,.08) 100%);
+  border:1.5px solid rgba(22,163,74,.4);
+  padding:1.5rem;text-align:center;
+}
+.result-icon{font-size:2.8rem;margin-bottom:.75rem;display:block;animation:popIn .4s cubic-bezier(.34,1.56,.64,1)}
+@keyframes popIn{from{transform:scale(0)}to{transform:scale(1)}}
+.result-status-label{
+  font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--green);margin-bottom:.5rem;
+}
+.result-name{
+  font-family:'Merriweather',serif;
+  font-size:clamp(1rem,4vw,1.25rem);
+  font-weight:700;color:var(--white);
+  line-height:1.3;margin-bottom:.4rem;
+}
+.result-nisn{font-size:.8rem;color:var(--gray);margin-bottom:1rem;font-family:monospace}
+.result-stamp{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--green-bg);color:#15803D;
+  font-weight:800;font-size:.95rem;letter-spacing:.1em;
+  padding:.5rem 1.5rem;border-radius:8px;
+  border:2px solid rgba(22,163,74,.5);
+}
+.result-congrats{
+  margin-top:1rem;font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.6;
+}
+
+.result-notfound{
+  background:rgba(239,68,68,.08);
+  border:1.5px solid rgba(239,68,68,.35);
+  padding:1.25rem;text-align:center;
+}
+.result-notfound .nf-icon{font-size:2rem;margin-bottom:.5rem;display:block}
+.result-notfound p{font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.6}
+.result-notfound strong{color:rgba(255,255,255,.8)}
+
+.error-msg{
+  font-size:.8rem;color:#F87171;
+  text-align:center;margin-top:.5rem;
+  display:none;min-height:1.2em;
+}
+
+/* ── FOOTER ── */
+footer{
+  margin-top:auto;width:100%;
+  padding:2rem 1rem;text-align:center;
+  border-top:1px solid rgba(29,95,168,.2);
+}
+.footer-text{font-size:.75rem;color:rgba(255,255,255,.2);line-height:1.8}
+.footer-text strong{color:rgba(200,151,43,.5)}
+
+/* ── LOGO UPLOAD HINT ── */
+.logo-hint-text{
+  font-size:9px;position:absolute;bottom:2px;left:0;right:0;
+  text-align:center;color:rgba(200,151,43,.6);pointer-events:none;
+}
+
+/* ── INFO ROW ── */
+.info-row{
+  display:flex;gap:.6rem;margin-top:1rem;
+  flex-wrap:wrap;justify-content:center;
+}
+.info-chip{
+  display:flex;align-items:center;gap:.35rem;
+  background:rgba(29,95,168,.15);
+  border:1px solid rgba(29,95,168,.3);
+  border-radius:50px;padding:.3rem .8rem;
+  font-size:.72rem;color:var(--gray2);font-weight:500;
+}
+.chip-dot{width:5px;height:5px;border-radius:50%;background:var(--blue3);flex-shrink:0}
+
+@media(max-width:420px){
+  .topbar{gap:.75rem;padding:.6rem 1rem}
+  .logo-slot{width:46px;height:46px;font-size:1.2rem}
+  .hero{padding:2rem 1rem 1.5rem}
+  .card{padding:1.5rem 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="logo-slot" title="Upload logo Kemendikbud" onclick="this.querySelector('input').click()">
+    <span id="icon1">🏛</span>
+    <img id="img1" alt="Kemendikbud">
+    <span class="logo-hint-text">Logo</span>
+    <input type="file" accept="image/*" onchange="setLogo(this,'img1','icon1')">
+  </div>
+
+  <div class="topbar-center">
+    <div class="topbar-title" id="namaSekolah">SMP [Nama Sekolah]</div>
+    <div class="topbar-sub">Pengumuman Kelulusan · Tahun Pelajaran 2024/2025</div>
+  </div>
+
+  <div class="logo-slot" title="Upload logo sekolah" onclick="this.querySelector('input').click()">
+    <span id="icon2">🏫</span>
+    <img id="img2" alt="Sekolah">
+    <span class="logo-hint-text">Logo</span>
+    <input type="file" accept="image/*" onchange="setLogo(this,'img2','icon2')">
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    <div class="badge-dot"></div>
+    Resmi · 2024/2025
+  </div>
+  <h1>Cek Status<br><span>Kelulusanmu</span></h1>
+  <p class="hero-desc">
+    Masukkan NISN kamu untuk mengetahui<br>status kelulusan secara pribadi.
+  </p>
+
+  <!-- CARD INPUT -->
+  <div class="card">
+    <div class="card-label">Masukkan NISN</div>
+
+    <div class="input-wrap">
+      <span class="input-icon">🔢</span>
+      <input
+        type="tel"
+        id="nisnInput"
+        placeholder="Contoh: 0012345678"
+        maxlength="12"
+        autocomplete="off"
+        oninput="onInput()"
+        onkeydown="if(event.key==='Enter')cekKelulusan()"
+      >
+    </div>
+
+    <div class="error-msg" id="errMsg">NISN harus terdiri dari angka.</div>
+
+    <button class="btn-cek" id="btnCek" onclick="cekKelulusan()">
+      <div class="spinner" id="spinner"></div>
+      <span id="btnText">🔍 &nbsp;Cek Sekarang</span>
+    </button>
+
+    <div class="info-row">
+      <div class="info-chip"><div class="chip-dot"></div>Data bersifat rahasia</div>
+      <div class="info-chip"><div class="chip-dot"></div>Hanya bisa diakses dengan NISN</div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="result" id="resultBox"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-text">
+    Dokumen pengumuman resmi kelulusan &mdash; <strong>Tahun Pelajaran 2024/2025</strong><br>
+    Hanya untuk kalangan internal sekolah
+  </p>
+</footer>
+
+<script>
+const DATA = {"102173172":"ACHMAD FARHAN FADILLAH","109436603":"AJRUN AZIM","112671918":"ALBEGA VAREL","111191657":"ALDO ADITYA HERMAN","117333483":"ANITA DWI PURWANTI","115761102":"AURELIA SYAHWAL EVELYN","115490270":"CARLA AMELIA","112543483":"DINAR RAMA NUR FAUZY","117792359":"FADLY FADILAH","115983425":"FAHRIZ MAULANA RISKI","3127057984":"FANISA AULIA RAHMA","107258908":"FIRZY PUTRA ADITRIA RIZKY","106107252":"ISMA AULIA DAMAYANTI","103506723":"KHAIDAR ABDUL SAPUTRA","112090822":"LUTFHI","115301721":"MUHAMMAD FAHRUL","103398451":"MUHAMMAD YUNUS RAMDANI","101374506":"NATASYA INTAN NOVIANDA","116939305":"NAUVAL ABDUL FAKIH","101159745":"NELSA PUTRI OKTAVIANI","111249948":"NINDYA SALSABIL","102103427":"NISA SYAHRUL HASANAH","103844017":"NISHPI SALSABILA FITRI","113760597":"NUGRAHA APIK RAIH","106348694":"RANDI KHAERUDIN","105439537":"RASYA EKA APRIANA","117026408":"SALSABILA HIMATURIFA","108084131":"SYEH CANDRA KUSUMAH DINATA","105486236":"YUNITA HAWA SYAKEENA","105575957":"ZIVANA INGE RAMADHANTY","3100118036":"AFALDA RIZKA SABILA","3108675004":"AKBAR ALFIANSYAH","103973095":"ALISA NURAFNI NOVITASARI","109445312":"ANANDA PANDU RIZKI RAMADHAN","115302093":"APRILLIAN SABIL","102541885":"CHELSEA ARSZATHY ISNAINI","114650493":"DANENDRA ABHYAKTA ZURA","102319801":"DIAR DWI NANDANA","102173607":"FAZRI NURANANDIAS","117517675":"FIRDAUS RIZKI WARDIAN","102190951":"GEYSHA NUR OKTAVIANIE","111829984":"JIAN NUR ALIF","103880377":"MOCH. NIZAM ASSAUKANI","108718107":"MUHAMMAD RAFFI ALVIAN FIRDAUS","108911594":"NADIA AMELIA PUTRI","113689185":"NAIYLA ANANDITA","106374579":"NATASHYA CARON","106956244":"NEZYA ANISA PUTRI","119247873":"NIZAH NURSABRINA","116149115":"PANJI MAULANA","104001428":"PUTRI RADINA RASTI","117753124":"RAFA ADITYA FIRMANSYAH","117247148":"RAHMA WARDANI","107641465":"RAKA ERLANGGA","118752642":"REFAN APRIANSYAH","116384440":"RISKA PUTRI HIDAYAH","114352798":"SALSABILA AURELIA DIVIANNY","108113301":"ZYA JULIA DEVIONITA","118916892":"ALISA NUR FAUZIAH","3102089367":"ANANTI PADILLAH","107495952":"AZIS MAULANA YUSUF","113494637":"CHILA PRICILIA","112308949":"CITRA AVRILLIA ERNAWAN","119312646":"DAFA TRINARA","102189083":"DEA AWALIANTI","101928472":"DWI PUTRI LESTARI","105151580":"FAEYZA RIFFAT PRATAMA","103427802":"FARHANIDDIN","129814898":"FARIZ ALI","105608092":"JIHAN SYAFIRA PRATISTHA","105061202":"KAYSA AZHAR RANDI","113637423":"KEYNALLA SHERIN ANINDITHA","108877259":"KHAERTUL KHUSNA DWI AL-VAUZIAH","116981059":"LINTANG MAUZNALIS PRATAMA","107011408":"MAHESA BURHAN SAPUTRA","115682453":"MUHAMMAD AZKA SYAPUTRA","3116770560":"MUHAMMAD HANIF HAMZAH","107837205":"NABILA SEPTIANI PUTRI","104055700":"NURHASANAH","117937297":"RAHMAWATI KURNIA NINGSIH","109507618":"RIDWAN ALAMSYAH","3112815961":"RIZKA FITRI AGUSTI","112237837":"SYAH PUTRA ABDUL PRATAMA","104454238":"TIVAN FIRDAUS","108360046":"VANIA AURELIA NADINE","112994967":"WINDU SURYO NEGORO","109980800":"AISYA DIAN AYU","113101182":"AJENG KARTINI NINGSIH","119715005":"ALDO JAUZA NUGRAHA","112896500":"ALFRI MESSYANA JANKA","116492148":"ALIKA NUR AFIFAH","96465226":"ALMIRA RAMADHANI","92850757":"ARYO PURWANTO","114544909":"AURA PUTRI BERLIANRA","113341678":"AZZAM AMIRUL ZAMAN","101236576":"DEA PUTRI KARI","115485884":"ELVIRA STEFANI","102675202":"FAHMI ABDUL HAKIM","107719140":"FAJAR NUR RAMADHAN","111227225":"GIBRAN FERDINAN PUTRA","117801725":"IBNU HAIDAR MUBAROK","116585870":"IIP NURAMELIANI","104729912":"INDAH PUTRI SEPTIANI","112297179":"KAIRO FAIZULLAH AL JABBAR","118685760":"KHANSA NADHIFAH QURROTU'AIN","108902891":"KHEYSA AYUNINGTYAS","118915775":"LISNA CEMPAKA LESTARI","102795402":"MASRI YUNINGSIH","119952738":"MEDIANTORO RIZKIANSYAH HENDRAWAN","3106952566":"MOHAMMAD HUDAN AL FATH","116492837":"MUHAMAD FADILAH","99958856":"NABILA NURUL FREEDAYA","102889182":"RAHMA AULIYA","104190160":"SULIS ADELIA ZALDANIRA","106444552":"TANISHA KURNIA PUTRI","118152777":"VICKY ZRIPINA MAHYA AMINULLAH"};
+
+function onInput(){
+  document.getElementById('errMsg').style.display='none';
+  document.getElementById('resultBox').style.display='none';
+}
+
+function cekKelulusan(){
+  const raw = document.getElementById('nisnInput').value.trim();
+  const err = document.getElementById('errMsg');
+  const box = document.getElementById('resultBox');
+  const btn = document.getElementById('btnCek');
+  const spinner = document.getElementById('spinner');
+  const btnText = document.getElementById('btnText');
+
+  err.style.display='none';
+  box.style.display='none';
+
+  if(!raw){err.textContent='Harap masukkan NISN terlebih dahulu.';err.style.display='block';return}
+  if(!/^\d+$/.test(raw)){err.textContent='NISN hanya boleh berisi angka.';err.style.display='block';return}
+
+  // Loading state
+  btn.classList.add('loading');
+  spinner.style.display='block';
+  btnText.textContent='Memeriksa...';
+
+  setTimeout(()=>{
+    btn.classList.remove('loading');
+    spinner.style.display='none';
+    btnText.innerHTML='🔍 &nbsp;Cek Sekarang';
+
+    const nama = DATA[raw];
+    if(nama){
+      box.className='result result-lulus';
+      box.innerHTML=`
+        <span class="result-icon">🎓</span>
+        <div class="result-status-label">✓ Dinyatakan Lulus</div>
+        <div class="result-name">${nama}</div>
+        <div class="result-nisn">NISN: ${raw}</div>
+        <div class="result-stamp">✅ &nbsp;LULUS</div>
+        <p class="result-congrats">
+          Selamat! Kamu telah berhasil menyelesaikan<br>
+          pendidikan di jenjang SMP.<br>
+          Terus semangat di jenjang berikutnya! 🌟
+        </p>
+      `;
+    } else {
+      box.className='result result-notfound';
+      box.innerHTML=`
+        <span class="nf-icon">❓</span>
+        <p>NISN <strong>${raw}</strong> tidak ditemukan dalam data.<br><br>
+        Periksa kembali penulisan NISN kamu,<br>atau hubungi pihak sekolah.</p>
+      `;
+    }
+    box.style.display='block';
+  }, 900);
+}
+
+function setLogo(input, imgId, iconId){
+  const file = input.files[0]; if(!file) return;
+  const r = new FileReader();
+  r.onload = e => {
+    const img = document.getElementById(imgId);
+    img.src = e.target.result; img.style.display='block';
+    document.getElementById(iconId).style.display='none';
+  };
+  r.readAsDataURL(file);
+}
+</script>
+</body>
+</html>
