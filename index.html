@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
  <link rel="icon" type="image/png" href="logo-sekolah.png">
@@ -35,7 +35,7 @@ body{
   flex-direction:column;
   align-items:center;
 }
-
+ 
 /* ── TOP BAR ── */
 .topbar{
   width:100%;
@@ -61,7 +61,7 @@ body{
   line-height:1.3;
 }
 .topbar-sub{font-size:clamp(.65rem,1.8vw,.78rem);color:var(--gold2);letter-spacing:.06em;margin-top:2px}
-
+ 
 /* ── HERO ── */
 .hero{
   width:100%;max-width:560px;
@@ -87,7 +87,94 @@ body{
   font-size:clamp(.85rem,2.5vw,.95rem);
   color:var(--gray);line-height:1.7;margin-bottom:2.5rem;
 }
-
+ 
+/* ── SAMBUTAN ── */
+.sambutan{
+  width:100%;max-width:560px;
+  padding:0 1.5rem 2rem;
+}
+.sambutan-box{
+  background:var(--navy2);
+  border:1px solid rgba(200,151,43,.2);
+  border-left:3px solid var(--gold);
+  border-radius:16px;
+  padding:1.5rem 1.75rem;
+}
+.sambutan-header{
+  display:flex;align-items:center;gap:.6rem;
+  margin-bottom:1rem;
+}
+.sambutan-icon{font-size:1.3rem}
+.sambutan-title{
+  font-size:.7rem;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--gold2);
+}
+.sambutan-text{
+  font-size:.83rem;color:rgba(255,255,255,.6);
+  line-height:1.85;font-style:italic;
+}
+.sambutan-text p+p{margin-top:.75rem}
+.sambutan-footer{
+  margin-top:1rem;padding-top:.75rem;
+  border-top:1px solid rgba(200,151,43,.15);
+  font-size:.78rem;font-weight:600;color:var(--gold2);
+  text-align:right;
+}
+ 
+/* ── COUNTDOWN ── */
+.countdown-wrap{
+  width:100%;max-width:560px;
+  padding:0 1.5rem 2rem;
+  text-align:center;
+}
+.countdown-label{
+  font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gray);font-weight:600;margin-bottom:1rem;
+}
+.countdown-grid{
+  display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;
+}
+.cd-box{
+  background:var(--navy2);
+  border:1px solid rgba(29,95,168,.35);
+  border-radius:14px;
+  padding:.9rem .75rem .6rem;
+  min-width:70px;flex:1;max-width:90px;
+}
+.cd-num{
+  font-family:'Merriweather',serif;
+  font-size:clamp(1.6rem,5vw,2.2rem);
+  font-weight:900;color:var(--white);
+  line-height:1;display:block;
+}
+.cd-unit{
+  font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gray);font-weight:600;margin-top:.35rem;display:block;
+}
+.countdown-note{
+  margin-top:1rem;
+  font-size:.78rem;color:rgba(255,255,255,.35);
+}
+.countdown-note strong{color:var(--gold2)}
+ 
+/* ── LOCKED STATE ── */
+.locked-box{
+  width:100%;max-width:420px;
+  background:var(--navy2);
+  border:1px solid rgba(29,95,168,.35);
+  border-radius:20px;
+  padding:2rem 1.75rem;
+  margin:0 auto 2rem;
+  text-align:center;
+}
+.lock-icon{font-size:2.5rem;margin-bottom:.75rem;display:block}
+.lock-title{
+  font-family:'Merriweather',serif;
+  font-size:1rem;font-weight:700;color:var(--white);
+  margin-bottom:.4rem;
+}
+.lock-desc{font-size:.82rem;color:var(--gray);line-height:1.6}
+ 
 /* ── CARD ── */
 .card{
   width:100%;max-width:420px;
@@ -96,6 +183,7 @@ body{
   border-radius:20px;
   padding:2rem 1.75rem;
   margin:0 auto;
+  display:none;
 }
 .card-label{
   font-size:12px;font-weight:600;letter-spacing:.1em;
@@ -106,7 +194,7 @@ body{
 .card-label::after{content:'';flex:1;height:1px;background:rgba(200,151,43,.2)}
 .card-label::before{margin-right:.5rem}
 .card-label::after{margin-left:.5rem}
-
+ 
 .input-wrap{position:relative;margin-bottom:1rem}
 .input-wrap input{
   width:100%;
@@ -146,7 +234,7 @@ body{
   animation:spin .7s linear infinite;display:none;
 }
 @keyframes spin{to{transform:rotate(360deg)}}
-
+ 
 /* ── RESULT ── */
 .result{
   margin-top:1.25rem;
@@ -156,7 +244,7 @@ body{
   animation:slideIn .35s ease;
 }
 @keyframes slideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
-
+ 
 .result-lulus{
   background:linear-gradient(135deg,rgba(22,163,74,.12) 0%,rgba(16,122,55,.08) 100%);
   border:1.5px solid rgba(22,163,74,.4);
@@ -185,7 +273,7 @@ body{
 .result-congrats{
   margin-top:1rem;font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.6;
 }
-
+ 
 .result-notfound{
   background:rgba(239,68,68,.08);
   border:1.5px solid rgba(239,68,68,.35);
@@ -194,13 +282,13 @@ body{
 .result-notfound .nf-icon{font-size:2rem;margin-bottom:.5rem;display:block}
 .result-notfound p{font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.6}
 .result-notfound strong{color:rgba(255,255,255,.8)}
-
+ 
 .error-msg{
   font-size:.8rem;color:#F87171;
   text-align:center;margin-top:.5rem;
   display:none;min-height:1.2em;
 }
-
+ 
 /* ── FOOTER ── */
 footer{
   margin-top:auto;width:100%;
@@ -209,7 +297,7 @@ footer{
 }
 .footer-text{font-size:.75rem;color:rgba(255,255,255,.2);line-height:1.8}
 .footer-text strong{color:rgba(200,151,43,.5)}
-
+ 
 /* ── INFO ROW ── */
 .info-row{
   display:flex;gap:.6rem;margin-top:1rem;
@@ -223,33 +311,32 @@ footer{
   font-size:.72rem;color:var(--gray2);font-weight:500;
 }
 .chip-dot{width:5px;height:5px;border-radius:50%;background:var(--blue3);flex-shrink:0}
-
+ 
 @media(max-width:420px){
   .topbar{gap:.75rem;padding:.6rem 1rem}
   .logo-slot{width:46px;height:46px;font-size:1.2rem}
   .hero{padding:2rem 1rem 1.5rem}
   .card{padding:1.5rem 1.25rem}
+  .cd-box{min-width:60px;padding:.7rem .5rem .5rem}
 }
 </style>
 </head>
 <body>
-
+ 
 <!-- TOP BAR -->
 <div class="topbar">
-    <div class="logo-slot" id="slot1">
+  <div class="logo-slot" id="slot1">
     <img alt="Kemendikbud" src="https://royyannn.github.io/kelulusan/logo-kemdikbud.png">
   </div>
-
   <div class="topbar-center">
     <div class="topbar-title" id="namaSekolah">SMP Negeri 3 Cilimus</div>
     <div class="topbar-sub">Pengumuman Kelulusan · Tahun Pelajaran 2025/2026</div>
   </div>
-
-    <div class="logo-slot" id="slot2">
+  <div class="logo-slot" id="slot2">
     <img alt="Sekolah" src="https://royyannn.github.io/kelulusan/logo-sekolah.png">
   </div>
 </div>
-
+ 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-badge">
@@ -260,41 +347,71 @@ footer{
   <p class="hero-desc">
     Masukkan NISN kamu untuk mengetahui<br>status kelulusan secara pribadi.
   </p>
-
-  <!-- CARD INPUT -->
-  <div class="card">
-    <div class="card-label">Masukkan NISN</div>
-
-    <div class="input-wrap">
-      <span class="input-icon">🔢</span>
-      <input
-        type="tel"
-        id="nisnInput"
-        placeholder="Contoh: 0012345678"
-        maxlength="12"
-        autocomplete="off"
-        oninput="onInput()"
-        onkeydown="if(event.key==='Enter')cekKelulusan()"
-      >
+</div>
+ 
+<!-- SAMBUTAN -->
+<div class="sambutan">
+  <div class="sambutan-box">
+    <div class="sambutan-header">
+      <span class="sambutan-icon"></span>
+      <span class="sambutan-title">Sambutan Kepala Sekolah</span>
     </div>
-
-    <div class="error-msg" id="errMsg">NISN harus terdiri dari angka.</div>
-
-    <button class="btn-cek" id="btnCek" onclick="cekKelulusan()">
-      <div class="spinner" id="spinner"></div>
-      <span id="btnText">🔍 &nbsp;Cek Sekarang</span>
-    </button>
-
-    <div class="info-row">
-      <div class="info-chip"><div class="chip-dot"></div>Data bersifat rahasia</div>
-      <div class="info-chip"><div class="chip-dot"></div>Hanya bisa diakses dengan NISN</div>
+    <div class="sambutan-text">
+      <p>Assalamu'alaikum Warahmatullahi Wabarakatuh,</p>
+      <p>Puji serta syukur kita panjatkan ke hadirat Allah SWT yang telah memberikan rahmat dan karunia-Nya sehingga para siswa-siswi SMP Negeri 3 Cilimus dapat menyelesaikan pendidikan dengan baik.</p>
+      <p>Saya mengucapkan selamat kepada seluruh siswa-siswi yang telah dinyatakan lulus. Semoga ilmu yang telah didapat menjadi bekal untuk meraih masa depan yang lebih cerah. Tetap semangat dalam menuntut ilmu dan jadilah generasi yang berakhlak mulia serta bermanfaat bagi bangsa dan negara.</p>
+      <p>Wassalamu'alaikum Warahmatullahi Wabarakatuh.</p>
     </div>
-
-    <!-- RESULT -->
-    <div class="result" id="resultBox"></div>
+    <div class="sambutan-footer">— Kepala Sekolah SMP Negeri 3 Cilimus</div>
   </div>
 </div>
-
+ 
+<!-- COUNTDOWN -->
+<div class="countdown-wrap" id="countdownSection">
+  <p class="countdown-label">Pengumuman dibuka dalam</p>
+  <div class="countdown-grid">
+    <div class="cd-box"><span class="cd-num" id="cdHari">--</span><span class="cd-unit">Hari</span></div>
+    <div class="cd-box"><span class="cd-num" id="cdJam">--</span><span class="cd-unit">Jam</span></div>
+    <div class="cd-box"><span class="cd-num" id="cdMenit">--</span><span class="cd-unit">Menit</span></div>
+    <div class="cd-box"><span class="cd-num" id="cdDetik">--</span><span class="cd-unit">Detik</span></div>
+  </div>
+  <p class="countdown-note">Dibuka pada <strong>2 Juni 2026, pukul 17.00 WIB</strong></p>
+</div>
+ 
+<!-- LOCKED (sebelum waktunya) -->
+<div class="locked-box" id="lockedBox">
+  <span class="lock-icon">🔒</span>
+  <div class="lock-title">Belum Saatnya</div>
+  <div class="lock-desc">Pengumuman kelulusan akan dibuka sesuai jadwal yang telah ditentukan. Pantau terus halaman ini!</div>
+</div>
+ 
+<!-- CARD INPUT (muncul setelah waktunya) -->
+<div class="card" id="cardInput">
+  <div class="card-label">Masukkan NISN</div>
+  <div class="input-wrap">
+    <span class="input-icon">🔢</span>
+    <input
+      type="tel"
+      id="nisnInput"
+      placeholder="Contoh: 0012345678"
+      maxlength="12"
+      autocomplete="off"
+      oninput="onInput()"
+      onkeydown="if(event.key==='Enter')cekKelulusan()"
+    >
+  </div>
+  <div class="error-msg" id="errMsg">NISN harus terdiri dari angka.</div>
+  <button class="btn-cek" id="btnCek" onclick="cekKelulusan()">
+    <div class="spinner" id="spinner"></div>
+    <span id="btnText">🔍 &nbsp;Cek Sekarang</span>
+  </button>
+  <div class="info-row">
+    <div class="info-chip"><div class="chip-dot"></div>Data bersifat rahasia</div>
+    <div class="info-chip"><div class="chip-dot"></div>Hanya bisa diakses dengan NISN</div>
+  </div>
+  <div class="result" id="resultBox"></div>
+</div>
+ 
 <!-- FOOTER -->
 <footer>
   <p class="footer-text">
@@ -302,41 +419,79 @@ footer{
     Hanya untuk kalangan internal sekolah
   </p>
 </footer>
-
+ 
 <script>
 const DATA = {"102173172":"ACHMAD FARHAN FADILLAH","109436603":"AJRUN AZIM","112671918":"ALBEGA VAREL","111191657":"ALDO ADITYA HERMAN","117333483":"ANITA DWI PURWANTI","115761102":"AURELIA SYAHWAL EVELYN","115490270":"CARLA AMELIA","112543483":"DINAR RAMA NUR FAUZY","117792359":"FADLY FADILAH","115983425":"FAHRIZ MAULANA RISKI","3127057984":"FANISA AULIA RAHMA","107258908":"FIRZY PUTRA ADITRIA RIZKY","106107252":"ISMA AULIA DAMAYANTI","103506723":"KHAIDAR ABDUL SAPUTRA","112090822":"LUTFHI","115301721":"MUHAMMAD FAHRUL","103398451":"MUHAMMAD YUNUS RAMDANI","101374506":"NATASYA INTAN NOVIANDA","116939305":"NAUVAL ABDUL FAKIH","101159745":"NELSA PUTRI OKTAVIANI","111249948":"NINDYA SALSABIL","102103427":"NISA SYAHRUL HASANAH","103844017":"NISHPI SALSABILA FITRI","113760597":"NUGRAHA APIK RAIH","106348694":"RANDI KHAERUDIN","105439537":"RASYA EKA APRIANA","117026408":"SALSABILA HIMATURIFA","108084131":"SYEH CANDRA KUSUMAH DINATA","105486236":"YUNITA HAWA SYAKEENA","105575957":"ZIVANA INGE RAMADHANTY","3100118036":"AFALDA RIZKA SABILA","3108675004":"AKBAR ALFIANSYAH","103973095":"ALISA NURAFNI NOVITASARI","109445312":"ANANDA PANDU RIZKI RAMADHAN","115302093":"APRILLIAN SABIL","102541885":"CHELSEA ARSZATHY ISNAINI","114650493":"DANENDRA ABHYAKTA ZURA","102319801":"DIAR DWI NANDANA","102173607":"FAZRI NURANANDIAS","117517675":"FIRDAUS RIZKI WARDIAN","102190951":"GEYSHA NUR OKTAVIANIE","111829984":"JIAN NUR ALIF","103880377":"MOCH. NIZAM ASSAUKANI","108718107":"MUHAMMAD RAFFI ALVIAN FIRDAUS","108911594":"NADIA AMELIA PUTRI","113689185":"NAIYLA ANANDITA","106374579":"NATASHYA CARON","106956244":"NEZYA ANISA PUTRI","119247873":"NIZAH NURSABRINA","116149115":"PANJI MAULANA","104001428":"PUTRI RADINA RASTI","117753124":"RAFA ADITYA FIRMANSYAH","117247148":"RAHMA WARDANI","107641465":"RAKA ERLANGGA","118752642":"REFAN APRIANSYAH","116384440":"RISKA PUTRI HIDAYAH","114352798":"SALSABILA AURELIA DIVIANNY","108113301":"ZYA JULIA DEVIONITA","118916892":"ALISA NUR FAUZIAH","3102089367":"ANANTI PADILLAH","107495952":"AZIS MAULANA YUSUF","113494637":"CHILA PRICILIA","112308949":"CITRA AVRILLIA ERNAWAN","119312646":"DAFA TRINARA","102189083":"DEA AWALIANTI","101928472":"DWI PUTRI LESTARI","105151580":"FAEYZA RIFFAT PRATAMA","103427802":"FARHANIDDIN","129814898":"FARIZ ALI","105608092":"JIHAN SYAFIRA PRATISTHA","105061202":"KAYSA AZHAR RANDI","113637423":"KEYNALLA SHERIN ANINDITHA","108877259":"KHAERTUL KHUSNA DWI AL-VAUZIAH","116981059":"LINTANG MAUZNALIS PRATAMA","107011408":"MAHESA BURHAN SAPUTRA","115682453":"MUHAMMAD AZKA SYAPUTRA","3116770560":"MUHAMMAD HANIF HAMZAH","107837205":"NABILA SEPTIANI PUTRI","104055700":"NURHASANAH","117937297":"RAHMAWATI KURNIA NINGSIH","109507618":"RIDWAN ALAMSYAH","3112815961":"RIZKA FITRI AGUSTI","112237837":"SYAH PUTRA ABDUL PRATAMA","104454238":"TIVAN FIRDAUS","108360046":"VANIA AURELIA NADINE","112994967":"WINDU SURYO NEGORO","109980800":"AISYA DIAN AYU","113101182":"AJENG KARTINI NINGSIH","119715005":"ALDO JAUZA NUGRAHA","112896500":"ALFRI MESSYANA JANKA","116492148":"ALIKA NUR AFIFAH","96465226":"ALMIRA RAMADHANI","92850757":"ARYO PURWANTO","114544909":"AURA PUTRI BERLIANRA","113341678":"AZZAM AMIRUL ZAMAN","101236576":"DEA PUTRI KARI","115485884":"ELVIRA STEFANI","102675202":"FAHMI ABDUL HAKIM","107719140":"FAJAR NUR RAMADHAN","111227225":"GIBRAN FERDINAN PUTRA","117801725":"IBNU HAIDAR MUBAROK","116585870":"IIP NURAMELIANI","104729912":"INDAH PUTRI SEPTIANI","112297179":"KAIRO FAIZULLAH AL JABBAR","118685760":"KHANSA NADHIFAH QURROTU'AIN","108902891":"KHEYSA AYUNINGTYAS","118915775":"LISNA CEMPAKA LESTARI","102795402":"MASRI YUNINGSIH","119952738":"MEDIANTORO RIZKIANSYAH HENDRAWAN","3106952566":"MOHAMMAD HUDAN AL FATH","116492837":"MUHAMAD FADILAH","99958856":"NABILA NURUL FREEDAYA","102889182":"RAHMA AULIYA","104190160":"SULIS ADELIA ZALDANIRA","106444552":"TANISHA KURNIA PUTRI","118152777":"VICKY ZRIPINA MAHYA AMINULLAH"};
-
+ 
+// Target: 5 Juni 2025 pukul 17.00 WIB (UTC+7)
+const TARGET = new Date('2026-06-02T17:00:00+07:00');
+ 
+function pad(n){ return String(n).padStart(2,'0'); }
+ 
+function checkAndUpdate(){
+  const now = new Date();
+  const diff = TARGET - now;
+ 
+  if(diff <= 0){
+    // SUDAH WAKTUNYA — tampilkan form
+    document.getElementById('countdownSection').style.display = 'none';
+    document.getElementById('lockedBox').style.display = 'none';
+    document.getElementById('cardInput').style.display = 'block';
+    clearInterval(timer);
+    return;
+  }
+ 
+  // Hitung sisa waktu
+  const totalSec = Math.floor(diff / 1000);
+  const hari   = Math.floor(totalSec / 86400);
+  const jam    = Math.floor((totalSec % 86400) / 3600);
+  const menit  = Math.floor((totalSec % 3600) / 60);
+  const detik  = totalSec % 60;
+ 
+  document.getElementById('cdHari').textContent  = pad(hari);
+  document.getElementById('cdJam').textContent   = pad(jam);
+  document.getElementById('cdMenit').textContent = pad(menit);
+  document.getElementById('cdDetik').textContent = pad(detik);
+ 
+  // Pastikan yang tampil hanya countdown + locked
+  document.getElementById('countdownSection').style.display = 'block';
+  document.getElementById('lockedBox').style.display = 'block';
+  document.getElementById('cardInput').style.display = 'none';
+}
+ 
+checkAndUpdate();
+const timer = setInterval(checkAndUpdate, 1000);
+ 
+/* ── NISN SEARCH ── */
 function onInput(){
   document.getElementById('errMsg').style.display='none';
   document.getElementById('resultBox').style.display='none';
 }
-
+ 
 function cekKelulusan(){
   const raw = document.getElementById('nisnInput').value.trim();
-  // Strip leading zeros to match Excel-stored numeric NISN
   const key = raw.replace(/^0+/, '') || raw;
   const err = document.getElementById('errMsg');
   const box = document.getElementById('resultBox');
   const btn = document.getElementById('btnCek');
   const spinner = document.getElementById('spinner');
   const btnText = document.getElementById('btnText');
-
+ 
   err.style.display='none';
   box.style.display='none';
-
+ 
   if(!raw){err.textContent='Harap masukkan NISN terlebih dahulu.';err.style.display='block';return}
   if(!/^\d+$/.test(raw)){err.textContent='NISN hanya boleh berisi angka.';err.style.display='block';return}
-
-  // Loading state
+ 
   btn.classList.add('loading');
   spinner.style.display='block';
   btnText.textContent='Memeriksa...';
-
+ 
   setTimeout(()=>{
     btn.classList.remove('loading');
     spinner.style.display='none';
     btnText.innerHTML='🔍 &nbsp;Cek Sekarang';
-
+ 
     const nama = DATA[key] || DATA[raw];
     if(nama){
       box.className='result result-lulus';
@@ -363,8 +518,6 @@ function cekKelulusan(){
     box.style.display='block';
   }, 900);
 }
-
-
 </script>
 </body>
 </html>
